@@ -7,7 +7,6 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <malloc.h>
-//#include "socketutil.h"
 
 struct AcceptedSocket
 {
