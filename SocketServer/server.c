@@ -21,7 +21,7 @@ struct AcceptedSocket * acceptIncomingConnection(int serverSocketFD);
 void acceptNewConnectionAndReceiveAndPrintItsData(int serverSocketFD);
 void receiveAndPrintIncomingData(int socketFD);
 
-void startAcceptingIncomingConnections(int serverSocketFD);
+void acceptIncomingConnections(int serverSocketFD);
 
 void receiveAndPrintIncomingDataOnSeparateThread(struct AcceptedSocket *pSocket);
 
@@ -34,7 +34,7 @@ struct AcceptedSocket acceptedSockets[10] ;
 int acceptedSocketsCount = 0;
 
 
-void startAcceptingIncomingConnections(int serverSocketFD) {
+void acceptIncomingConnections(int serverSocketFD) {
 
     while(true)
     {
@@ -131,7 +131,7 @@ int main() {
 
     int listenResult = listen(serverSocketFD,10);
 
-    startAcceptingIncomingConnections(serverSocketFD);
+    acceptIncomingConnections(serverSocketFD);
 
     shutdown(serverSocketFD,SHUT_RDWR);
 
